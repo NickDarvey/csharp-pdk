@@ -1,8 +1,11 @@
 ﻿using Extism.Sdk.Native;
+using System.Reflection;
 
 using System.Text;
 
-var path = "../../../../SamplePlugin/bin/Debug/net7.0/SamplePlugin.wasm";
+var path = Path.Combine(
+    Assembly.GetExecutingAssembly().Location,
+    "../../../../../SamplePlugin/bin/Debug/net7.0/SamplePlugin.wasm");
 
 var bytes = File.ReadAllBytes(path);
 var context = new Context();
